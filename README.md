@@ -18,6 +18,7 @@ coachtech お問い合わせフォーム実装（確認テスト）
 
 ※DB接続のため、.envを以下に修正してください
 
+```env
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
@@ -47,3 +48,4 @@ DB_PASSWORD=laravel_pass
 - ログイン：http://localhost/login
 - 管理画面：http://localhost/admin （※要ログイン）
 - phpMyAdmin：http://localhost:8080
+```
