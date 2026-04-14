@@ -1,0 +1,104 @@
+.form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form__group {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.form__group-title {
+    width: 30%;
+}
+
+.form__group-content {
+    width: 70%;
+    box-sizing: border-box;
+}
+
+.form__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.form__label--required {
+    color: #ff0000;
+}
+
+.form__input-wrapper {
+    flex: 1;
+}
+
+.form__item-input {
+    width: 100%;
+}
+
+.form__item-input::placeholder,
+.form__item-textarea::placeholder {
+    color: #BEB2A6;
+}
+
+.form__group-content--gender {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+}
+
+.form__radio {
+    height: 30px;
+    color: #82756A;
+}
+
+.form__item-radio {
+    accent-color: #82756A;
+}
+
+input[name='tel1'],
+input[name='tel2'],
+input[name='tel3'] {
+    padding-left: 0;
+    text-align: center;
+}
+
+.form__tel-hyphen {
+    color: #82756A;
+}
+
+.form__item-input,
+.form__item-textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form__item-select {
+    height: 30px;
+    padding-left: 20px;
+    color: #82756A;
+    border: none;
+    outline: none;
+    background-color: #F4F4F4;
+}
+
+.form__item-textarea {
+    padding-left: 20px;
+    border: none;
+    outline: none;
+    background-color: #F4F4F4;
+}
+
+.form__input--textarea {
+    width: 100%;
+}
+
+.form__item-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+
