@@ -25,6 +25,7 @@ DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
+```
 
 - php artisan key:generate
 - php artisan migrate:fresh --seed
@@ -48,4 +49,7 @@ DB_PASSWORD=laravel_pass
 - ログイン：http://localhost/login
 - 管理画面：http://localhost/admin （※要ログイン）
 - phpMyAdmin：http://localhost:8080
+
+```
+
 ```
