@@ -42,5 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/export', [ContactController::class, 'export']);
 });
 
+// エクスポート
+Route::get('/export', [COntactController::class, 'export']);
+
 // ログアウト
 Route::post('/logout', [LoginController::class, 'logout']);

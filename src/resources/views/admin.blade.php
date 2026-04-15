@@ -46,7 +46,7 @@
 
     <!-- ナビ -->
     <div class="admin__nav">
-        <a class="export__btn" href="/export">エクスポート</a>
+        <a class="export__btn" href="{{ url('/export?' . http_build_query(request()->query())) }}">エクスポート</a>
         <div class="pagination">
             {{ $contacts->links() }}
         </div>

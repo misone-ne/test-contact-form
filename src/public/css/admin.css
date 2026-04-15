@@ -16,6 +16,7 @@
 
 .search-form__item-input[name="keyword"] {
     width: 300px;
+    outline: none;
 }
 
 .search-form__button,
@@ -43,6 +44,10 @@
 
 .search-form__item-select {
     width: 100%;
+}
+
+input[type="date"] {
+    cursor: pointer;
 }
 
 .search-form__reset-link {
@@ -154,6 +159,7 @@
     background-color: #FCFCFC;
     border: 1px solid #BAA899;
     color: #BAA899;
+    cursor: pointer;
 }
 
 .admin-table__row:hover {
@@ -206,6 +212,7 @@
     justify-content: center;
     border-radius: 50%;
     border: 1px solid #82756A;
+    cursor: pointer;
 }
 
 .modal__table {
@@ -236,4 +243,5 @@
     border: none;
     background-color: #BA370D;
     color: #ffffff;
+    cursor: pointer;
 }

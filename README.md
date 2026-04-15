@@ -49,7 +49,3 @@ DB_PASSWORD=laravel_pass
 - ログイン：http://localhost/login
 - 管理画面：http://localhost/admin （※要ログイン）
 - phpMyAdmin：http://localhost:8080
-
-```
-
-```

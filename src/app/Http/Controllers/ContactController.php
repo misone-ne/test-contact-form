@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Category;
 use App\Models\Contact;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ContactController extends Controller
 {
@@ -78,6 +79,50 @@ class ContactController extends Controller
         $contacts->appends($request->all());
 
         return view('admin', compact('contacts', 'categories'));
+    }
+
+    public function export(Request $request)
+    {
+        $contacts = Contact::with('category')
+            ->keywordSearch($request->keyword)
+            ->genderSearch($request->gender)
+            ->categorySearch($request->category_id)
+            ->dateSearch($request->date)
+            ->get();
+
+        return new StreamedResponse(function () use ($contacts) {
+            $stream = fopen('php://output', 'w');
+
+            stream_filter_append($stream, 'convert.iconv.utf-8/cp932//TRANSLIT');
+
+            fputcsv($stream, [
+                'お名前',
+                '性別',
+                'メールアドレス',
+                '電話番号',
+                '住所',
+                '建物名',
+                'お問い合わせの種類',
+                'お問い合わせ内容',
+            ]);
+
+            foreach ($contacts as $contact) {
+                fputcsv($stream, [
+                    $contact->last_name . ' ' . $contact->first_name,
+                    $contact->gender == 1 ? '男性' : ($contact->gender == 2 ? '女性' : 'その他'),
+                    $contact->email,
+                    $contact->tel,
+                    $contact->address,
+                    $contact->building,
+                    $contact->category->content,
+                    $contact->detail,
+                ]);
+            }
+            fclose($stream);
+        }, 200, [
+            'content-Type' => 'text/csv',
+            'content-Disposition' => 'attachment; filename="contacts_' . date('YmdHis') . '.csv"',
+        ]);
     }
 
     public function destroy(Request $request)

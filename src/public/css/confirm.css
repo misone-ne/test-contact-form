@@ -28,6 +28,10 @@
     border-bottom: 1px solid #EBEBEA;
 }
 
+.form__button {
+    margin-bottom: 50px;
+}
+
 .form__button-back {
     padding: 10px 35px;
     background-color: #ffffff;
@@ -36,4 +40,5 @@
     text-underline-offset: 2px;
     border: none;
     outline: none;
+    cursor: pointer;
 }

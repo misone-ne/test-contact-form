@@ -56,6 +56,11 @@
     accent-color: #82756A;
 }
 
+.input[type='radio'],
+label {
+    cursor: pointer;
+}
+
 input[name='tel1'],
 input[name='tel2'],
 input[name='tel3'] {
@@ -101,4 +106,6 @@ input[name='tel3'] {
     resize: none;
 }
 
-
+.form__button {
+    margin-bottom: 50px;
+}
